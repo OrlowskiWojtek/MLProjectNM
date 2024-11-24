@@ -25,14 +25,16 @@ def load_sounds_from_directory(directory_path, file_extensions=('.wav')):
                     data, sr = lr.load(file_path, sr=None)  # sr=None to preserve original rate
 
                     gender = Sound.Gender.MALE if("_m_" in file) else Sound.Gender.FEMALE
-                    word = Sound.Word.TAK if("_tak_" in file) else Sound.Word.NIE
-                    
+                    if("_tak_" in file):
+                        word = Sound.Word.TAK
+                    elif("_nie_" in file):
+                        word = Sound.Word.NIE
+                    elif("_rand_" in file):
+                        word = Sound.Word.RAND
+                    else:
+                        word = Sound.Word.ERROR
+                        
                     sounds.append(Sound(data, sr, file, gender, word))
                 except Exception as e:
                     print(f"Error loading {file_path}: {e}")
     return sounds
-
-##
-
-dir = "../../recordings"
-sounds = load_sounds_from_directory(dir)

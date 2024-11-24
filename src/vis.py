@@ -1,4 +1,3 @@
-
 import librosa as lr
 import matplotlib.pyplot as plt
 from sound_object import Sound

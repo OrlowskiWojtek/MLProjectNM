@@ -8,6 +8,8 @@ class Sound:
     class Word(Enum):
         TAK = 1
         NIE = 2
+        RAND = 3
+        ERROR = -1
 
     def __init__(self, data, sr, file_name, gender, word):
         self.data = data       # Audio time series
