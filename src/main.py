@@ -9,12 +9,14 @@ sounds = load_sounds_from_directory(dir)
 
 ##
 
-trimmed = trim_sound(sounds[0])
+trimmed = trim_sound(sounds[30], 0.4)
 
 ##
 
-plot_waveform(sounds[0])
+plot_waveform(sounds[30])
 plot_waveform(trimmed)
 
 ##
+import soundfile as sf
 
+sf.write("trimmed_audio_test.wav", trimmed.data, trimmed.sr)
