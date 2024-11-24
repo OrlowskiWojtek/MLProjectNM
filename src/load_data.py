@@ -1,6 +1,6 @@
 import librosa as lr
 import os
-import sound_object as snd
+from sound_object import Sound
 
 ##
 
@@ -24,10 +24,10 @@ def load_sounds_from_directory(directory_path, file_extensions=('.wav')):
                 try:
                     data, sr = lr.load(file_path, sr=None)  # sr=None to preserve original rate
 
-                    gender = snd.Sound.Gender.MALE if("_m_" in file) else snd.Sound.Gender.FEMALE
-                    word = snd.Sound.Word.TAK if("_tak_" in file) else snd.Sound.Word.NIE
+                    gender = Sound.Gender.MALE if("_m_" in file) else Sound.Gender.FEMALE
+                    word = Sound.Word.TAK if("_tak_" in file) else Sound.Word.NIE
                     
-                    sounds.append(snd.Sound(data, sr, file, gender, word))
+                    sounds.append(Sound(data, sr, file, gender, word))
                 except Exception as e:
                     print(f"Error loading {file_path}: {e}")
     return sounds
@@ -36,10 +36,3 @@ def load_sounds_from_directory(directory_path, file_extensions=('.wav')):
 
 dir = "../../recordings"
 sounds = load_sounds_from_directory(dir)
-
-##
-
-for sound in sounds:
-    print(f"Filename: {sound.file_name}, sample rate: {sound.sr}")
-
-
