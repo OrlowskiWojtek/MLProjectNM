@@ -3,7 +3,7 @@ import numpy as np
 import librosa as lr
 from sound_object import Sound
 
-def std_difference_difference(sound:Sound, numb_of_div=4):
+def stddev_difference(sound:Sound, numb_of_div=4):
     # Step 1: Divide the vector into equal parts
     length = len(sound.data)
     segment_size = length // numb_of_div  # Size of each segment
