@@ -7,6 +7,6 @@ def where_max_amp(sound:Sound):
     max_amplitude_index = np.argmax(np.abs(sound.data))
 
     # Relative position of max, number in range (0,1]
-    location_of_max = (max_amplitude_index + 1)/len(sound.dat)
+    location_of_max = (max_amplitude_index + 1)/len(sound.data)
 
     return location_of_max
