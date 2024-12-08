@@ -10,7 +10,7 @@ def AUC_with_gaussian_kernel_data(sound:Sound):
     negative_data = data.copy()
     negative_data[negative_data >= 0] = 0
 
-    time = np.arange(0, len(sound.data)/sound.sr - 1/sound.sr, 1/sound.sr)
+    time = np.linspace(0, (len(sound.data))/sound.sr, len(sound.data))
     curve = (positive_data + (-negative_data))
 
     def gaussian_distribution(x, mu=0, sigma=0.15):
