@@ -1,4 +1,3 @@
-
 import numpy as np
 import librosa as lr
 from sound_object import Sound
