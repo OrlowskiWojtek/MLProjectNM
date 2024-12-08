@@ -12,4 +12,3 @@ def reduce_noise(sound: Sound):
     reduced = nr.reduce_noise(y = y, sr = sr, stationary = True, prop_decrease = 0.75)
     new_sound = Sound(reduced, sr, sound.file_name, sound.gender, sound.word)
     return new_sound
-
