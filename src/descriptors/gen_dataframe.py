@@ -19,6 +19,12 @@ from freq_of_third_max import find_third_maximum
 from mean_amp import mean_amplitude
 from total_energy_in_sound import normalized_total_energy
 from zero_crossing_rate import zero_crossing_rate
+from lpc_diff import lpc_diff
+from lpc_max_neg_run import lpc_max_neg_run
+from lpc_max_pos_run import lpc_max_pos_run
+from lpc_mean import lpc_mean
+from lpc_neg_to_pos_ratio import lpc_neg_to_pos_ratio
+from lpc_stdev import lpc_stdev
 
 def generate_dataframe(sounds):
     descriptors = [
@@ -26,9 +32,9 @@ def generate_dataframe(sounds):
         stddev_difference,
         what_part_is_lower_than,
         where_max_amp,
-        #AUC_diff,
-        #AUC_data,
-        #AUC_with_gaussian_kernel_data,
+        AUC_diff,
+        AUC_data,
+        AUC_with_gaussian_kernel_data,
         amp_diff_start_end,
         duration,
         first_max_to_second_max_freq,
@@ -38,16 +44,22 @@ def generate_dataframe(sounds):
         find_third_maximum,
         mean_amplitude,
         normalized_total_energy,
-        zero_crossing_rate]
+        zero_crossing_rate,
+        lpc_diff,
+        lpc_max_neg_run,
+        lpc_max_pos_run,
+        lpc_mean,
+        lpc_neg_to_pos_ratio,
+        lpc_stdev]
 
     desc_names = [
         "mean_difference",
         "stddev_difference",
         "what_part_is_lower_than",
         "where_max_amp",
-        #"AUC_diff",
-        #"AUC_data",
-        #"AUC_with_gaussian_kernel_data",
+        "AUC_diff",
+        "AUC_data",
+        "AUC_with_gaussian_kernel_data",
         "amp_diff_start_end",
         "duration",
         "first_max_to_second_max_freq",
@@ -57,7 +69,14 @@ def generate_dataframe(sounds):
         "find_third_maximum",
         "mean_amplitude",
         "normalized_total_energy",
-        "zero_crossing_rate"]
+        "zero_crossing_rate",
+        "lpc_diff",
+        "lpc_max_neg_run",
+        "lpc_max_pos_run",
+        "lpc_mean",
+        "lpc_neg_to_pos_ratio",
+        "lpc_stdev"]
+
     n_rows = len(sounds)
     n_cols = len(descriptors) # number of descriptors
     data = np.zeros((n_rows, n_cols))

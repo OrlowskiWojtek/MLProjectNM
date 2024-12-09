@@ -19,6 +19,3 @@ for idx in range(len(sounds)):
 
 df = generate_dataframe(sounds)
 print(df)
-
-
-
