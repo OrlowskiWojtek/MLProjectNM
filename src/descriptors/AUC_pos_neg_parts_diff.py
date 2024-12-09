@@ -14,7 +14,7 @@ def AUC_diff(sound:Sound):
 
     negative_data = negative_data/min(negative_data)
 
-    time = np.arange(0, len(sound.data)/sound.sr - 1/sound.sr, 1/sound.sr)
+    time = np.linspace(0, (len(sound.data))/sound.sr, len(sound.data))
     
     area_pos = np.trapz(positive_data, time)
     area_neg = np.trapz(negative_data, time)

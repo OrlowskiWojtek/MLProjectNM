@@ -12,7 +12,7 @@ def AUC_data(sound:Sound):
 
     curve = positive_data + (-negative_data)
     curve = curve/max(curve)
-    time = np.arange(0, len(sound.data)/sound.sr - 1/sound.sr, 1/sound.sr)
+    time = np.linspace(0, (len(sound.data))/sound.sr, len(sound.data))
     
     area = np.trapz(curve, time)
 
