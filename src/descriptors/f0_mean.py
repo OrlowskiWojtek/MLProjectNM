@@ -23,4 +23,4 @@ def f0_mean(sound: Sound) -> float:
     if voiced_flag.any():
         return np.mean(f0[voiced_flag])
     else:
-        return 'n/a'
+        return float('nan')
