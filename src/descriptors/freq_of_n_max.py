@@ -1,6 +1,6 @@
 import numpy as np
 from sound_object import Sound
-from freq_from_fft import get_frequencies_from_fft
+from .freq_from_fft import get_frequencies_from_fft
 
 def find_n_maximum(sound:Sound, n):
 

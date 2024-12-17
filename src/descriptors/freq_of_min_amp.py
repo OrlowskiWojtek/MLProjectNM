@@ -1,5 +1,5 @@
 from sound_object import Sound
-from freq_from_fft import get_frequencies_from_fft
+from .freq_from_fft import get_frequencies_from_fft
 
 def find_freq_for_minimum_amp(sound:Sound):
 

@@ -23,4 +23,4 @@ def f0_median(sound: Sound) -> float:
     if voiced_flag.any():
         return np.median(f0[voiced_flag])
     else:
-        return 'n/a'
+        return float('nan')
