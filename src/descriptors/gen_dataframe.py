@@ -9,6 +9,10 @@ from .duration import duration
 from .f0_mean import f0_mean
 from .f0_median import f0_median
 from .first_second_max_ratio import first_max_to_second_max_freq
+from .fit_1st_polynomial import fit_1st_polynomial
+from .fit_2nd_polynomial import fit_2nd_polynomial
+from .fit_3rd_polynomial import fit_3rd_polynomial
+from .fit_4th_polynomial import fit_4th_polynomial
 from .freq_of_first_max import find_first_maximum
 from .freq_of_min_amp import find_freq_for_minimum_amp
 from .freq_of_second_max import find_second_maximum
@@ -47,6 +51,10 @@ def generate_dataframe(sounds):
         f0_mean,
         f0_median,
         first_max_to_second_max_freq,
+        fit_1st_polynomial,
+        fit_2nd_polynomial,
+        fit_3rd_polynomial,
+        fit_4th_polynomial,
         find_first_maximum,
         find_freq_for_minimum_amp,
         find_second_maximum,
@@ -84,6 +92,10 @@ def generate_dataframe(sounds):
         "f0_mean",
         "f0_median",
         "first_max_to_second_max_freq",
+        "fit_1st_polynomial",
+        "fit_2nd_polynomial",
+        "fit_3rd_polynomial",
+        "fit_4th_polynomial",
         "find_first_maximum",
         "find_freq_for_minimum_amp",
         "find_second_maximum",
