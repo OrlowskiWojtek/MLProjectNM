@@ -1,7 +1,7 @@
 import numpy as np
 from sound_object import Sound
 
-def fit_4tg_polynomial(sound:Sound):
+def fit_4th_polynomial(sound:Sound):
     """
     Fits to the sound vector a 4th polynomial
     returns coefficient a 
